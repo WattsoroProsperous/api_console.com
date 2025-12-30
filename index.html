@@ -1671,7 +1671,7 @@
         // Tests
         async function testBanks() {
             try {
-                const result = await makeRequest("GET", "banks", null, false);
+                const result = await makeRequest("GET", "banks", null, true);
                 showResult("result-banks", result.data, result.success);
             } catch (e) {
                 showResult("result-banks", { error: e.message }, false);
