@@ -1641,12 +1641,14 @@
 
             if (auth) {
                 const apiKey = getApiKey();
+                console.log('API Key utilisee:', apiKey ? apiKey.substring(0, 20) + '...' : 'VIDE');
                 if (!apiKey) {
                     throw new Error("Cle API non configuree");
                 }
                 headers["Authorization"] = `Bearer ${apiKey}`;
             }
 
+            console.log('Headers envoyes:', headers);
             log(`${method} /${endpoint}`, 'info');
 
             const options = { method, headers };
